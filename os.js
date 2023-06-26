@@ -20,3 +20,6 @@ console.log(os.homedir());
 
 // uptime()
 console.log(os.uptime() / 60 / 60 / 24);
+
+// hostname()
+console.log(os.hostname());
