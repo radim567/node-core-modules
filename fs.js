@@ -46,7 +46,42 @@ async function readFile(filename) {
   }
 }
 
-readFile('message.txt');
-readFile('message2.txt');
-readFile('message3.txt');
 readFile('message4.txt');
+
+// Delete a File
+
+async function deleteFile(filename) {
+  try {
+    await fs.unlink(filename);
+    console.log(`File ${filename} has been deleted`);
+  } catch {
+    (err) => console.log(err);
+  }
+}
+
+// Rename  Fila
+
+async function renameFile(oldName, newName) {
+  try {
+    await fs.rename(oldName, newName);
+    console.log(`File ${oldName} has been renamed to ${newName}`);
+  } catch {
+    (err) => console.log(err);
+  }
+}
+
+renameFile('message4.txt', 'message5.txt');
+renameFile('message3.txt', 'message33.txt');
+
+// Create Folder
+
+async function createFolder(folderName) {
+  try {
+    await fs.mkdir(folderName);
+    console.log(`Folder ${folderName} has been created`);
+  } catch {
+    (err) => console.log(err);
+  }
+}
+
+createFolder('newFolder');
